@@ -23,15 +23,17 @@ jobs:
   
   Style:
     name: Style
-    runs-on: ubuntu/latest  
-      steps:
-        - name: Check out code
-          uses: actions/checkout@v6
+    runs-on: ubuntu-latest
 
-        - name: Set up Go
-          uses: actions/setup-go@v6
-          with:
-            go-version: "1.27.1"
-      
-        - name: Formating
-          run: test -z $(go fmt ./...)
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v6
+
+      - name: Set up Go
+        uses: actions/setup-go@v6
+        with:
+          go-version: "1.27.1"
+
+      - name: formater
+        run: test -z $(go fmt ./...)
+  
